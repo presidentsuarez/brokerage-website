@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Join Realty ONE Group Advantage</title>
+<meta name="description" content="Apply to join Realty ONE Group Advantage — a tech-forward brokerage powered by Prism.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/site.css"><link rel="icon" href="assets/logo.png"></head><body>
+<header class="nav"><div class="wrap"><a class="brand" href="index.html"><img src="assets/logo.png" alt="Prism">Realty ONE Group Advantage</a><a class="btn ghost" href="index.html">← Home</a></div></header>
+<div class="hero" style="padding-bottom:30px"><div class="wrap">
+  <span class="eyebrow">Agent application</span>
+  <h1 style="font-size:clamp(34px,5vw,56px)">Join the <span class="g">brokerage.</span></h1>
+  <p>Tell us about you. A broker will reach out within one business day.</p>
+  <form class="lead" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thanks — we\'ll be in touch ✓';this.querySelector('button').disabled=true;">
+    <input name="name" placeholder="Full name" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="phone" placeholder="Phone" required>
+    <input name="license" placeholder="License # (if any)">
+    <textarea name="about" rows="3" placeholder="Where do you sell, and what are you looking for?"></textarea>
+    <button class="btn" type="submit">Submit application</button>
+  </form>
+  <p style="font-size:12px;color:var(--mut2);margin-top:14px">This form is a front-end template — wire it to a Supabase table or email when ready.</p>
+</div></div>
+<footer><div class="wrap">Realty ONE Group Advantage · powered by Prism</div></footer>
+</body></html>
