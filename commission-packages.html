@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Commission Packages — Realty ONE Group Advantage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15110C;
+    --ink-2:#1f1a13;
+    --ink-3:#2a241b;
+    --paper:#F6F1E7;
+    --paper-dim:#cfc6b5;
+    --muted:#9a9183;
+    --line:rgba(203,163,92,0.22);
+    --gold:#CBA35C;
+    --gold-bright:#E6C77E;
+    --gold-deep:#9c7a34;
+    --red:#c0432f;
+    --green:#5e8c5a;
+    --radius:14px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Manrope',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(900px 600px at 85% -5%, rgba(203,163,92,0.14), transparent 60%),
+      radial-gradient(700px 500px at -5% 105%, rgba(203,163,92,0.08), transparent 60%);
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:1}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-0.01em}
+  .gold{color:var(--gold-bright)}
+  .eyebrow{
+    font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;
+  }
+
+  /* ---------- Brand mark ---------- */
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .badge{
+    width:42px;height:42px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--gold-bright), var(--gold-deep));
+    display:grid;place-items:center;flex:none;
+    box-shadow:0 4px 18px rgba(203,163,92,.35);
+  }
+  .brand .badge span{font-family:'Manrope';font-weight:700;font-size:.74rem;letter-spacing:.04em;color:#1a1409}
+  .brand .word{line-height:1.05}
+  .brand .word .top{font-weight:700;font-size:.98rem;letter-spacing:.02em}
+  .brand .word .top em{font-style:normal;color:var(--gold-bright)}
+  .brand .word .sub{font-size:.56rem;letter-spacing:.45em;color:var(--paper-dim);text-transform:uppercase;margin-top:2px}
+
+  /* ---------- Top nav ---------- */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+      background:rgba(21,17,12,.72);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+  nav .links{display:flex;gap:26px;font-size:.85rem}
+  nav .links a{color:var(--paper-dim);text-decoration:none;transition:color .2s}
+  nav .links a:hover{color:var(--gold-bright)}
+  @media(max-width:720px){nav .links{display:none}}
+
+  /* ---------- Hero ---------- */
+  header.hero{padding:88px 0 70px;position:relative}
+  .hero .eyebrow{opacity:0;animation:rise .8s .05s forwards}
+  .hero h1{
+    font-size:clamp(2.6rem,6.5vw,5rem);line-height:.98;margin:18px 0 22px;max-width:14ch;
+    opacity:0;animation:rise .9s .15s forwards;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-bright)}
+  .hero p.lead{
+    font-size:1.12rem;color:var(--paper-dim);max-width:54ch;
+    opacity:0;animation:rise .9s .3s forwards;
+  }
+  .hero .cta-row{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:rise .9s .45s forwards}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;
+    font-family:'Manrope';font-weight:600;font-size:.92rem;padding:13px 24px;border-radius:50px;
+    text-decoration:none;transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));color:#1a1409;box-shadow:0 8px 24px rgba(203,163,92,.3)}
+  .btn-ghost{background:transparent;color:var(--paper);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--gold)}
+
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+  /* ---------- Section heads ---------- */
+  section{padding:64px 0;position:relative}
+  .sec-head{margin-bottom:42px;max-width:60ch}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.8rem);margin:12px 0 10px}
+  .sec-head p{color:var(--paper-dim)}
+
+  /* ---------- Package cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:900px){.cards{grid-template-columns:1fr}}
+  .card{
+    background:linear-gradient(180deg,var(--ink-2),var(--ink));
+    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+  .card.feature{border-color:var(--gold)}
+  .card .card-top{padding:26px 24px 20px;border-bottom:1px solid var(--line);position:relative}
+  .card .ribbon{position:absolute;top:16px;right:-2px;background:var(--gold);color:#1a1409;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 13px;border-radius:4px 0 0 4px}
+  .card h3{font-size:1.55rem;margin-bottom:4px}
+  .card .tagline{font-size:.82rem;color:var(--muted)}
+  .card .headline-fee{margin-top:18px;display:flex;align-items:baseline;gap:7px}
+  .card .headline-fee .num{font-family:'Fraunces';font-size:2.3rem;color:var(--gold-bright);line-height:1}
+  .card .headline-fee .unit{font-size:.82rem;color:var(--paper-dim)}
+  .card .quick{padding:20px 24px;display:flex;flex-direction:column;gap:11px}
+  .quick .row{display:flex;justify-content:space-between;align-items:baseline;font-size:.9rem;gap:14px}
+  .quick .row span:first-child{color:var(--paper-dim)}
+  .quick .row span:last-child{font-weight:600;text-align:right}
+  .card .card-foot{margin-top:auto;padding:18px 24px 24px}
+  .learn{width:100%;justify-content:center;background:transparent;border:1px solid var(--line);color:var(--paper);border-radius:10px}
+  .learn:hover{border-color:var(--gold);transform:none;color:var(--gold-bright)}
+
+  /* expandable detail */
+  .detail{max-height:0;overflow:hidden;transition:max-height .45s ease;border-top:0 solid var(--line)}
+  .detail.open{max-height:1400px;border-top:1px solid var(--line)}
+  .detail-inner{padding:22px 24px}
+  .detail h4{font-family:'Manrope';font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:18px 0 9px}
+  .detail h4:first-child{margin-top:0}
+  .detail .line{display:flex;justify-content:space-between;gap:14px;font-size:.86rem;padding:5px 0;border-bottom:1px dashed rgba(203,163,92,.12)}
+  .detail .line span:first-child{color:var(--paper-dim)}
+  .detail .line span:last-child{font-weight:600;white-space:nowrap}
+  .detail .note{font-size:.78rem;color:var(--muted);margin-top:14px;line-height:1.5}
+  .ex{background:rgba(203,163,92,.06);border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:16px}
+  .ex .ex-h{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .ex .line:last-child{border-bottom:none}
+  .ex .net{color:var(--gold-bright)}
+
+  /* ---------- Comparison ---------- */
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
+  table{width:100%;border-collapse:collapse;min-width:640px}
+  thead th{
+    text-align:left;padding:20px 18px;font-family:'Fraunces';font-weight:400;font-size:1.25rem;
+    border-bottom:1px solid var(--line);position:relative;
+  }
+  thead th:first-child{font-family:'Manrope';font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  thead th.hl{color:var(--gold-bright)}
+  tbody td,tbody th{padding:15px 18px;font-size:.9rem;border-bottom:1px solid rgba(203,163,92,.1);vertical-align:top}
+  tbody th{text-align:left;font-weight:600;color:var(--paper-dim);font-family:'Manrope'}
+  tbody td{font-weight:500}
+  tbody tr:hover{background:rgba(203,163,92,.04)}
+  tbody td.hl{color:var(--gold-bright)}
+  .pill{display:inline-block;font-size:.7rem;padding:2px 9px;border-radius:30px;background:rgba(203,163,92,.14);color:var(--gold-bright);font-weight:600}
+
+  /* ---------- Calculator ---------- */
+  .calc-shell{background:linear-gradient(180deg,var(--ink-2),var(--ink));border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .calc-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:0}
+  @media(max-width:880px){.calc-grid{grid-template-columns:1fr}}
+  .calc-inputs{padding:34px 32px;border-right:1px solid var(--line)}
+  @media(max-width:880px){.calc-inputs{border-right:none;border-bottom:1px solid var(--line)}}
+  .calc-inputs h3{font-size:1.5rem;margin-bottom:6px}
+  .calc-inputs .sub{font-size:.85rem;color:var(--paper-dim);margin-bottom:24px}
+  .field{margin-bottom:20px}
+  .field label{display:block;font-size:.8rem;color:var(--paper-dim);margin-bottom:7px;font-weight:600}
+  .field .input-wrap{position:relative}
+  .field .input-wrap .pre{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.95rem}
+  .field input[type=number]{
+    width:100%;background:var(--ink);border:1px solid var(--line);color:var(--paper);
+    font-family:'Manrope';font-size:1rem;padding:12px 14px;border-radius:10px;outline:none;transition:border-color .2s;
+  }
+  .field input.pad{padding-left:28px}
+  .field input:focus{border-color:var(--gold)}
+  .toggle{display:flex;align-items:center;gap:11px;cursor:pointer;font-size:.84rem;color:var(--paper-dim);margin-top:4px}
+  .toggle input{width:18px;height:18px;accent-color:var(--gold)}
+  .help{font-size:.72rem;color:var(--muted);margin-top:6px;line-height:1.45}
+
+  .calc-results{padding:34px 32px;display:flex;flex-direction:column;gap:14px}
+  .verdict{background:rgba(203,163,92,.08);border:1px solid var(--gold);border-radius:12px;padding:18px 20px}
+  .verdict .small{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+  .verdict .big{font-family:'Fraunces';font-size:1.7rem;color:var(--gold-bright);margin:4px 0 6px}
+  .verdict .why{font-size:.85rem;color:var(--paper-dim)}
+  .res-card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:border-color .25s}
+  .res-card.best{border-color:var(--gold)}
+  .res-card .res-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .res-card .res-name{font-weight:700;font-size:1rem}
+  .res-card .res-net{font-family:'Fraunces';font-size:1.35rem}
+  .res-card .res-net.win{color:var(--gold-bright)}
+  .res-card .breakdown{font-size:.78rem;color:var(--muted);display:grid;grid-template-columns:1fr auto;gap:3px 14px}
+  .res-card .breakdown b{color:var(--paper-dim);font-weight:600}
+  .disclaimer{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- Footnotes ---------- */
+  .notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  @media(max-width:760px){.notes-grid{grid-template-columns:1fr}}
+  .note-block h4{font-family:'Manrope';font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .note-block ol{padding-left:18px;display:flex;flex-direction:column;gap:9px}
+  .note-block li{font-size:.83rem;color:var(--paper-dim);line-height:1.5}
+  .signup{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px}
+  @media(max-width:600px){.signup{grid-template-columns:1fr}}
+  .signup .tier{border:1px solid var(--line);border-radius:12px;padding:18px}
+  .signup .tier .tname{font-family:'Fraunces';font-size:1.2rem;color:var(--gold-bright)}
+  .signup .tier .tprice{font-size:.85rem;color:var(--paper-dim);margin:2px 0 10px}
+  .signup .tier p{font-size:.8rem;color:var(--muted);line-height:1.5}
+
+  footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--muted);font-size:.8rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="brand" style="text-decoration:none;color:inherit">
+      <div class="badge"><span>ONE</span></div>
+      <div class="word">
+        <div class="top">REALTY <em>ONE</em> GROUP</div>
+        <div class="sub">Advantage</div>
+      </div>
+    </a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="#packages">Packages</a>
+      <a href="#compare">Compare</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#details">Details</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Commission Agreement Addendum</div>
+    <h1>Choose the plan that <em>keeps more</em> in your pocket.</h1>
+    <p class="lead">Three commission structures built for where you are in your business — from your first mentored deals to a full 100% split. Explore each, compare them side by side, and run your own numbers below.</p>
+    <div class="cta-row">
+      <a href="#packages" class="btn btn-gold">Explore packages ↓</a>
+      <a href="#calculator" class="btn btn-ghost">Find my best fit</a>
+    </div>
+  </div>
+</header>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The Plans</div>
+      <h2>Three ways to structure your split</h2>
+      <p>Tap “Learn more” on any plan to see the full fee schedule and a worked $356,000 example.</p>
+    </div>
+
+    <div class="cards" id="cardGrid">
+
+      <!-- CLASSIC -->
+      <article class="card feature">
+        <div class="card-top">
+          <span class="ribbon">Keeps client fees</span>
+          <h3>100% Classic</h3>
+          <div class="tagline">100% to agent · 2× company leads &amp; referrals at 70/30</div>
+          <div class="headline-fee"><span class="num">$125</span><span class="unit">/ month</span></div>
+        </div>
+        <div class="quick">
+          <div class="row"><span>Commission split</span><span>100% to Agent</span></div>
+          <div class="row"><span>E&amp;O insurance</span><span>$0.00</span></div>
+          <div class="row"><span>Transaction fee</span><span>$450–$850<sup>*</sup></span></div>
+          <div class="row"><span>Client admin fees</span><span>Agent keeps</span></div>
+        </div>
+        <div class="card-foot">
+          <button class="btn learn" data-target="d-classic">Learn more</button>
+        </div>
+        <div class="detail" id="d-classic">
+          <div class="detail-inner">
+            <h4>Monthly &amp; Insurance</h4>
+            <div class="line"><span>Monthly fee</span><span>$125.00</span></div>
+            <div class="line"><span>E&amp;O insurance</span><span>$0.00</span></div>
+            <h4>Agent Transaction Fee (by sale price)</h4>
+            <div class="line"><span>$0 – $200,000</span><span>$450.00</span></div>
+            <div class="line"><span>$200,001 – $400,000</span><span>$650.00</span></div>
+            <div class="line"><span>$400,001 – $600,000</span><span>$850.00</span></div>
+            <div class="line"><span>Each +$200k above $600k</span><span>+$200.00</span></div>
+            <h4>Agent Keeps Buyer &amp; Seller Fees</h4>
+            <div class="line"><span>Buyer's office admin fee</span><span>$395.00</span></div>
+            <div class="line"><span>Seller's office admin fee</span><span>$790.00</span></div>
+            <div class="ex">
+              <div class="ex-h">Example · $356,000 transaction</div>
+              <div class="line"><span>Transaction fee (cost to agent)</span><span>$650.00</span></div>
+              <div class="line"><span>Client / buyer fees agent keeps</span><span>$395.00</span></div>
+              <div class="line"><span class="net">Net cost on a buyer-side deal</span><span class="net">$255.00</span></div>
+            </div>
+            <p class="note">Best for established agents doing steady volume who pass the office admin fee to their clients — those fees stay with you and offset the transaction fee.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- BASIC -->
+      <article class="card">
+        <div class="card-top">
+          <h3>100% Basic</h3>
+          <div class="tagline">100% to agent · company leads &amp; referrals at 50/50</div>
+          <div class="headline-fee"><span class="num">$55</span><span class="unit">/ month</span></div>
+        </div>
+        <div class="quick">
+          <div class="row"><span>Commission split</span><span>100% to Agent</span></div>
+          <div class="row"><span>E&amp;O insurance</span><span>$0.00</span></div>
+          <div class="row"><span>Transaction fee</span><span>$395 flat<sup>*</sup></span></div>
+          <div class="row"><span>Client admin fees</span><span>To brokerage</span></div>
+        </div>
+        <div class="card-foot">
+          <button class="btn learn" data-target="d-basic">Learn more</button>
+        </div>
+        <div class="detail" id="d-basic">
+          <div class="detail-inner">
+            <h4>Monthly &amp; Insurance</h4>
+            <div class="line"><span>Monthly fee</span><span>$55.00</span></div>
+            <div class="line"><span>E&amp;O insurance</span><span>$0.00</span></div>
+            <div class="line"><span>Annual membership</span><span>$100.00</span></div>
+            <h4>Agent Transaction Fee</h4>
+            <div class="line"><span>Sale price up to $1,500,000</span><span>$395.00</span></div>
+            <div class="line"><span>Each +$200k above $1.5M</span><span>+$200.00</span></div>
+            <h4>Client Fees Paid to Brokerage</h4>
+            <div class="line"><span>Buyer's office admin fee</span><span>$395.00</span></div>
+            <div class="line"><span>Seller's office admin fee</span><span>$790.00</span></div>
+            <div class="ex">
+              <div class="ex-h">Example · $356,000 transaction</div>
+              <div class="line"><span>Transaction fee (cost to agent)</span><span>$395.00</span></div>
+              <div class="line"><span class="net">Net transaction cost to agent</span><span class="net">$395.00</span></div>
+            </div>
+            <p class="note">Lowest monthly overhead. A clean, predictable $395 per closing — ideal for agents with lighter or seasonal volume who'd rather not carry a high monthly fee.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- MENTEE -->
+      <article class="card">
+        <div class="card-top">
+          <span class="ribbon">New agents</span>
+          <h3>Mentee / Coaching</h3>
+          <div class="tagline">70/30 split with a mentor · first 3 transactions</div>
+          <div class="headline-fee"><span class="num">70%</span><span class="unit">agent split</span></div>
+        </div>
+        <div class="quick">
+          <div class="row"><span>Agent / Mentor split</span><span>70% / 30%</span></div>
+          <div class="row"><span>Monthly fee</span><span>$55.00</span></div>
+          <div class="row"><span>Transaction fee</span><span>$395 flat<sup>*</sup></span></div>
+          <div class="row"><span>Company leads</span><span>After 3rd deal</span></div>
+        </div>
+        <div class="card-foot">
+          <button class="btn learn" data-target="d-mentee">Learn more</button>
+        </div>
+        <div class="detail" id="d-mentee">
+          <div class="detail-inner">
+            <h4>Split &amp; Monthly</h4>
+            <div class="line"><span>Agent split</span><span>70%</span></div>
+            <div class="line"><span>Mentor split</span><span>30%</span></div>
+            <div class="line"><span>Monthly fee</span><span>$55.00</span></div>
+            <div class="line"><span>E&amp;O insurance</span><span>$0.00</span></div>
+            <h4>Agent Transaction Fee</h4>
+            <div class="line"><span>Sale price up to $1,500,000</span><span>$395.00</span></div>
+            <div class="line"><span>Each +$200k above $1.5M</span><span>+$200.00</span></div>
+            <h4>Client Fees Paid to Brokerage</h4>
+            <div class="line"><span>Buyer's office admin fee</span><span>$395.00</span></div>
+            <div class="line"><span>Seller's office admin fee</span><span>$790.00</span></div>
+            <div class="ex">
+              <div class="ex-h">Example · $356,000 transaction</div>
+              <div class="line"><span>Transaction fee (cost to agent)</span><span>$395.00</span></div>
+              <div class="line"><span class="net">Net transaction cost to agent</span><span class="net">$395.00</span></div>
+            </div>
+            <p class="note">For newly licensed agents. Eligible to switch to a 100% plan after 3 sale transactions (rentals don't count; double-ended deals count as one). The mentor's 30% buys hands-on guidance through your first closings.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section id="compare">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Side by Side</div>
+      <h2>Compare the tiers at a glance</h2>
+      <p>The headline differences across all three plans.</p>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="hl">100% Classic</th>
+            <th>100% Basic</th>
+            <th>Mentee / Coaching</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>Commission split</th><td class="hl">100% to Agent</td><td>100% to Agent</td><td>70% / 30% mentor</td></tr>
+          <tr><th>Monthly fee</th><td class="hl">$125.00</td><td>$55.00</td><td>$55.00</td></tr>
+          <tr><th>Annual membership</th><td>—</td><td>$100.00</td><td>—</td></tr>
+          <tr><th>E&amp;O insurance</th><td>$0.00</td><td>$0.00</td><td>$0.00</td></tr>
+          <tr><th>Transaction fee</th><td>$450 – $850 (by price)</td><td>$395 flat</td><td>$395 flat</td></tr>
+          <tr><th>Office admin fees</th><td class="hl">Agent keeps</td><td>Paid to brokerage</td><td>Paid to brokerage</td></tr>
+          <tr><th>Company leads</th><td>2× at 70/30</td><td>50/50 split</td><td>After 3rd transaction</td></tr>
+          <tr><th>Switch window</th><td>December</td><td>December</td><td>After 3 sales</td></tr>
+          <tr><th>Best for</th><td><span class="pill">Steady producers</span></td><td><span class="pill">Lighter volume</span></td><td><span class="pill">Newly licensed</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Run Your Numbers</div>
+      <h2>Which plan benefits <em class="gold serif">you</em> most?</h2>
+      <p>Enter last year's numbers (or a projection) and we'll estimate your annual cost under each plan and what you'd take home.</p>
+    </div>
+
+    <div class="calc-shell">
+      <div class="calc-grid">
+        <div class="calc-inputs">
+          <h3>Your year</h3>
+          <div class="sub">All figures are annual.</div>
+
+          <div class="field">
+            <label for="gci">Total GCI (gross commission income)</label>
+            <div class="input-wrap"><span class="pre">$</span>
+              <input type="number" id="gci" class="pad" value="120000" min="0" step="1000" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="deals">Number of transactions closed</label>
+            <div class="input-wrap">
+              <input type="number" id="deals" value="12" min="0" step="1" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="price">Average sale price per transaction</label>
+            <div class="input-wrap"><span class="pre">$</span>
+              <input type="number" id="price" class="pad" value="356000" min="0" step="5000" />
+            </div>
+            <div class="help">Used to size the Classic transaction fee, which scales with sale price.</div>
+          </div>
+
+          <div class="field">
+            <label class="toggle">
+              <input type="checkbox" id="collectFees" checked />
+              I charge clients the office admin fee on my deals
+            </label>
+            <div class="help">On Classic you keep these; on Basic/Mentee they go to the brokerage. Assumes one ~$395 admin fee per closing.</div>
+          </div>
+        </div>
+
+        <div class="calc-results" id="results">
+          <!-- filled by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS / NOTES -->
+<section id="details">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The Fine Print</div>
+      <h2>Notes, sign-up tiers &amp; policies</h2>
+    </div>
+
+    <div class="notes-grid">
+      <div class="note-block">
+        <h4>Plan notes</h4>
+        <ol>
+          <li>If net commission is $0–$499.99 there's no agent transaction fee; $500–$999.99 it's 10% of net plus $50; $1,000–$1,999.99 it's a flat $250.</li>
+          <li>Each additional $200,000 of price (in $200k increments or fraction) adds $200 to the transaction fee.</li>
+          <li>A $100 annual membership fee applies to agents on the 100% Basic plan, assessed at the start of each calendar year.</li>
+          <li>Agents may switch between 100% Classic and Basic during December; a $100 administrative fee applies and a new signed/dated addendum is retained by the brokerage.</li>
+          <li>Mentees may move to a 100% plan after 3 sale transactions (rentals excluded; double-ended deals count as one). The broker may require up to 2 additional mentee transactions if more practice is needed.</li>
+          <li>500 B&amp;W print/copies per month included (non-rolling); $0.10/page over, $0.25/page for color. A valid card on file is required for printer access.</li>
+          <li>For residential listings, For-Sale signs, lockboxes, sign posts and open-house signs are provided at no cost.</li>
+        </ol>
+      </div>
+
+      <div class="note-block">
+        <h4>Sign-up tiers</h4>
+        <div class="signup">
+          <div class="tier">
+            <div class="tname">Silver</div>
+            <div class="tprice">$295 · a $710 value</div>
+            <p>Sign-up &amp; tools/tech provisioning, ONE-on-ONE onboarding with staff &amp; broker, 500 business cards, t-shirt, ONE pin, professionally recorded &amp; edited intro video, profile picture, and ONE contract management.</p>
+          </div>
+          <div class="tier">
+            <div class="tname">Gold</div>
+            <div class="tprice">$395 · a $1,111 value</div>
+            <p>Everything in Silver plus: 1,000 gold-foil business cards, a monogrammed knit shirt, an edited social-media video, and the full agent tools &amp; tech package.</p>
+          </div>
+        </div>
+        <h4 style="margin-top:26px">Commercial</h4>
+        <ol><li>Commercial transactions require a separate Commercial Addendum to your ICA; that fee structure is defined there.</li></ol>
+        <h4 style="margin-top:26px">Rentals (per office note)</h4>
+        <ol><li>For rentals over $2,000, a flat $395 total is charged. Referrals are handled likewise, capped at $250.</li></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">
+      <div class="badge"><span>ONE</span></div>
+      <div class="word">
+        <div class="top">REALTY <em>ONE</em> GROUP</div>
+        <div class="sub">Advantage</div>
+      </div>
+    </div>
+    <div>Figures are estimates for comparison only. Confirm current terms in your signed ICA addendum.</div>
+  </div>
+</footer>
+
+<script>
+  /* ---------- Expandable cards ---------- */
+  document.querySelectorAll('.learn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const d=document.getElementById(btn.dataset.target);
+      const open=d.classList.toggle('open');
+      btn.textContent=open?'Show less':'Learn more';
+    });
+  });
+
+  /* ---------- Calculator ---------- */
+  const fmt = n => '$'+Math.round(n).toLocaleString('en-US');
+
+  function classicTxFee(price){
+    let fee;
+    if(price<=200000) fee=450;
+    else if(price<=400000) fee=650;
+    else fee=850;
+    if(price>600000){ fee += Math.ceil((price-600000)/200000)*200; }
+    return fee;
+  }
+  function flatTxFee(price){ // Basic & Mentee
+    let fee=395;
+    if(price>1500000){ fee += Math.ceil((price-1500000)/200000)*200; }
+    return fee;
+  }
+
+  function compute(){
+    const gci   = Math.max(0, +document.getElementById('gci').value||0);
+    const deals = Math.max(0, +document.getElementById('deals').value||0);
+    const price = Math.max(0, +document.getElementById('price').value||0);
+    const collect = document.getElementById('collectFees').checked;
+    const ADMIN = 395; // assumed admin fee collected per deal
+
+    // ----- Classic -----
+    const cMonthly = 125*12;
+    const cTx = deals*classicTxFee(price);
+    const cKept = collect ? deals*ADMIN : 0;   // agent keeps admin fees
+    const cCost = cMonthly + cTx - cKept;       // net brokerage cost
+    const cNet  = gci - cCost;
+
+    // ----- Basic -----
+    const bMonthly = 55*12;
+    const bMember = 100;
+    const bTx = deals*flatTxFee(price);
+    const bCost = bMonthly + bMember + bTx;     // admin fees go to brokerage -> not kept
+    const bNet  = gci - bCost;
+
+    // ----- Mentee -----
+    const mMonthly = 55*12;
+    const mTx = deals*flatTxFee(price);
+    const mCost = mMonthly + mTx;
+    const mAgentGci = gci*0.70;                 // 30% to mentor
+    const mNet  = mAgentGci - mCost;
+
+    const plans=[
+      {key:'classic', name:'100% Classic', net:cNet, rows:[
+        ['Take-home GCI', fmt(gci)],
+        ['Monthly ($125×12)', '−'+fmt(cMonthly)],
+        ['Transaction fees ('+deals+'×'+fmt(classicTxFee(price))+')', '−'+fmt(cTx)],
+        ['Admin fees you keep', (cKept>0?'+':'')+fmt(cKept)],
+      ]},
+      {key:'basic', name:'100% Basic', net:bNet, rows:[
+        ['Take-home GCI', fmt(gci)],
+        ['Monthly ($55×12)', '−'+fmt(bMonthly)],
+        ['Annual membership', '−'+fmt(bMember)],
+        ['Transaction fees ('+deals+'×'+fmt(flatTxFee(price))+')', '−'+fmt(bTx)],
+      ]},
+      {key:'mentee', name:'Mentee / Coaching', net:mNet, rows:[
+        ['GCI after 30% mentor split', fmt(mAgentGci)],
+        ['Monthly ($55×12)', '−'+fmt(mMonthly)],
+        ['Transaction fees ('+deals+'×'+fmt(flatTxFee(price))+')', '−'+fmt(mTx)],
+      ]},
+    ];
+
+    // best among the two 100% plans (the real choice for an established agent)
+    const established = [plans[0],plans[1]].slice().sort((a,b)=>b.net-a.net);
+    const best = established[0];
+    const diff = Math.abs(established[0].net - established[1].net);
+
+    const sorted = plans.slice().sort((a,b)=>b.net-a.net);
+    const topNet = sorted[0].net;
+
+    let html = `
+      <div class="verdict">
+        <div class="small">Best fit for you</div>
+        <div class="big">${best.name}</div>
+        <div class="why">Between the two 100% plans, ${best.name} nets you about <b style="color:var(--gold-bright)">${fmt(diff)}</b> more per year at this volume. Mentee is shown for reference (it's for your first 3 deals).</div>
+      </div>`;
+
+    plans.forEach(p=>{
+      const isTop = p.net===topNet;
+      html += `
+        <div class="res-card ${p.key===best.key?'best':''}">
+          <div class="res-top">
+            <span class="res-name">${p.name}</span>
+            <span class="res-net ${isTop?'win':''}">${fmt(p.net)}<span style="font-size:.6em;color:var(--muted)"> net/yr</span></span>
+          </div>
+          <div class="breakdown">
+            ${p.rows.map(r=>`<b>${r[0]}</b><span>${r[1]}</span>`).join('')}
+          </div>
+        </div>`;
+    });
+
+    html += `
+      <div class="disclaimer">
+        <b>How this is figured:</b> Net = your GCI minus monthly fees, membership, and per-deal transaction fees. Classic assumes you keep the office admin fee you charge clients; Basic and Mentee assume those go to the brokerage. The small-commission exceptions in Note 1 (deals under ~$2,000 net) aren't modeled here. These are estimates to guide the conversation — confirm exact, current fees with your broker before deciding.
+      </div>`;
+
+    document.getElementById('results').innerHTML = html;
+  }
+
+  ['gci','deals','price','collectFees'].forEach(id=>{
+    document.getElementById(id).addEventListener('input',compute);
+  });
+  compute();
+</script>
+</body>
+</html>
