@@ -1,39 +1,391 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Realty ONE Group Advantage — powered by Prism</title>
-<meta name="description" content="A tech-forward real estate brokerage. Keep more of your commission, close faster, and run your business on the Prism platform.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/site.css"><link rel="icon" href="assets/logo.png"></head><body>
-<header class="nav"><div class="wrap"><a class="brand" href="/brokerage-website/"><img src="assets/logo.png" alt="Prism">Realty ONE Group Advantage</a><a class="btn" href="join.html">Join the brokerage</a></div></header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Realty ONE Group Advantage — Own the Advantage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#100D09;
+    --ink-2:#181309;
+    --ink-3:#221b10;
+    --paper:#F6F1E7;
+    --paper-dim:#c8bfae;
+    --muted:#8c8475;
+    --line:rgba(203,163,92,0.22);
+    --gold:#CBA35C;
+    --gold-bright:#EBCB82;
+    --gold-deep:#946f2c;
+    --maxw:1240px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);color:var(--paper);
+    font-family:'Manrope',sans-serif;line-height:1.55;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;cursor:default;
+  }
+  /* grain + ambient glow layers */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  #glow{position:fixed;width:620px;height:620px;border-radius:50%;z-index:0;pointer-events:none;
+    background:radial-gradient(circle, rgba(203,163,92,.16), transparent 62%);
+    transform:translate(-50%,-50%);transition:opacity .4s;left:50%;top:0}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 30px;position:relative;z-index:2}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-0.015em}
+  .it{font-style:italic;color:var(--gold-bright)}
+  .eyebrow{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600}
 
-<div class="hero"><div class="wrap">
-  <span class="eyebrow">Realty ONE Group Advantage</span>
-  <h1>The brokerage that <span class="g">runs itself.</span></h1>
-  <p>Built on <strong>Prism</strong> — our own platform for deals, performance, and payouts. Keep more of your commission, see your numbers in real time, and let the back office run on autopilot.</p>
-  <div class="cta"><a class="btn" href="join.html">Become an agent</a><a class="btn ghost" href="#why">See why agents switch</a></div>
-</div></div>
+  /* brand mark */
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .badge{width:42px;height:42px;border-radius:50%;flex:none;display:grid;place-items:center;
+    background:radial-gradient(circle at 35% 30%, var(--gold-bright), var(--gold-deep));
+    box-shadow:0 4px 18px rgba(203,163,92,.4)}
+  .brand .badge span{font-weight:800;font-size:.74rem;color:#1a1409;letter-spacing:.02em}
+  .brand .word{line-height:1.05}
+  .brand .word .top{font-weight:800;font-size:.98rem;letter-spacing:.02em}
+  .brand .word .top em{font-style:normal;color:var(--gold-bright)}
+  .brand .word .sub{font-size:.55rem;letter-spacing:.46em;color:var(--paper-dim);text-transform:uppercase;margin-top:2px}
 
-<div class="wrap"><div class="stats">
-  <div class="stat"><div class="n">95<span class="u">M</span></div><div class="l">Volume closed</div></div>
-  <div class="stat"><div class="n">2,100<span class="u">+</span></div><div class="l">Deals</div></div>
-  <div class="stat"><div class="n">200<span class="u">+</span></div><div class="l">Agents</div></div>
-  <div class="stat"><div class="n">7<span class="u">yrs</span></div><div class="l">Track record</div></div>
-</div></div>
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .3s,border-color .3s,padding .3s;
+      border-bottom:1px solid transparent;padding:22px 0}
+  nav.scrolled{background:rgba(16,13,9,.82);backdrop-filter:blur(12px);border-color:var(--line);padding:14px 0}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between}
+  nav .links{display:flex;gap:30px;align-items:center;font-size:.86rem}
+  nav .links a{color:var(--paper-dim);text-decoration:none;transition:color .2s;position:relative}
+  nav .links a:hover{color:var(--gold-bright)}
+  nav .links a.cta{padding:9px 20px;border:1px solid var(--gold);border-radius:50px;color:var(--gold-bright)}
+  nav .links a.cta:hover{background:var(--gold);color:#1a1409}
+  @media(max-width:820px){nav .links a:not(.cta){display:none}}
 
-<section id="why"><div class="wrap"><div class="sh"><span class="eyebrow">Why Prism</span><h2>Less overhead. More closings.</h2><p>Everything an agent needs, in one place.</p></div>
-<div class="grid3">
-  <div class="card"><div class="ic">💸</div><h3>Keep more commission</h3><p>Transparent splits and low office fees — see exactly what you net on every deal.</p></div>
-  <div class="card"><div class="ic">📈</div><h3>Your numbers, live</h3><p>Real-time scorecard: GCI, deals, volume, and trends — no spreadsheets, no waiting.</p></div>
-  <div class="card"><div class="ic">🤖</div><h3>Back office on autopilot</h3><p>Bookkeeping, payouts, and pipeline handled by the Prism platform so you can sell.</p></div>
-  <div class="card"><div class="ic">🏷️</div><h3>Leads & marketing</h3><p>Lead-gen tools and brand-ready marketing built into your dashboard.</p></div>
-  <div class="card"><div class="ic">🤝</div><h3>Real support</h3><p>Brokers and ops who actually answer — onboarding to closing.</p></div>
-  <div class="card"><div class="ic">✦</div><h3>Ari, your AI coach</h3><p>An in-app assistant for offers, pipeline questions, and goal tracking.</p></div>
-</div></div></section>
+  /* hero */
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 0 80px;position:relative;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;
+    animation:kenburns 26s ease-out infinite alternate;will-change:transform}
+  @keyframes kenburns{from{transform:scale(1.06)}to{transform:scale(1.18)}}
+  .hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:
+      linear-gradient(180deg, rgba(16,13,9,.50) 0%, rgba(16,13,9,.70) 55%, var(--ink) 100%),
+      linear-gradient(90deg, rgba(16,13,9,.88) 0%, rgba(16,13,9,.30) 55%, rgba(16,13,9,.10) 100%)}
+  .hero::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:radial-gradient(1100px 640px at 80% 16%, rgba(203,163,92,.16), transparent 60%)}
+  .hero .wrap{z-index:3}
+  .hero .eyebrow{opacity:0;animation:rise .8s .1s forwards}
+  .hero h1{font-size:clamp(3rem,10vw,8.4rem);line-height:.92;margin:20px 0 0;font-weight:300}
+  .hero h1 .l{display:block;opacity:0;transform:translateY(40px);animation:rise 1s forwards}
+  .hero h1 .l:nth-child(1){animation-delay:.2s}
+  .hero h1 .l:nth-child(2){animation-delay:.36s}
+  .hero h1 .l:nth-child(3){animation-delay:.52s}
+  .hero .sub{display:flex;gap:30px;align-items:flex-end;margin-top:36px;flex-wrap:wrap;opacity:0;animation:rise 1s .7s forwards}
+  .hero .sub p{max-width:48ch;color:var(--paper-dim);font-size:1.1rem}
+  .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px;opacity:0;animation:rise 1s .85s forwards}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
 
-<section><div class="wrap"><div class="band">
-  <span class="eyebrow">Ready when you are</span>
-  <h2 style="margin-top:14px">Bring your business. We'll handle the rest.</h2>
-  <p style="color:var(--mut);max-width:560px;margin:12px auto 0">Join a brokerage built for producers. Apply in two minutes.</p>
-  <div class="cta"><a class="btn" href="join.html">Start your application</a></div>
-</div></div></section>
+  .btn{display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:none;text-decoration:none;
+    font-family:'Manrope';font-weight:700;font-size:.95rem;padding:15px 28px;border-radius:50px;
+    transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+  .btn:hover{transform:translateY(-3px)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));color:#1a1409;box-shadow:0 10px 30px rgba(203,163,92,.32)}
+  .btn-gold:hover{box-shadow:0 16px 44px rgba(203,163,92,.45)}
+  .btn-ghost{background:transparent;color:var(--paper);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-bright)}
+  .scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);opacity:0;animation:rise 1s 1.1s forwards}
+  .scroll-cue span{display:block;width:1px;height:46px;margin:12px auto 0;background:linear-gradient(var(--gold),transparent);animation:pulse 1.8s infinite}
+  @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
 
-<footer><div class="wrap">Realty ONE Group Advantage · Teamkar Realty, Inc. · powered by Prism<br><span class="mono">© 2026 · All rights reserved</span></div></footer>
-</body></html>
+  /* ticker */
+  .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;overflow:hidden;white-space:nowrap;background:rgba(24,19,9,.4)}
+  .ticker .track{display:inline-flex;gap:46px;animation:scroll 32s linear infinite;will-change:transform}
+  .ticker:hover .track{animation-play-state:paused}
+  .ticker span{font-family:'Fraunces';font-style:italic;font-size:1.5rem;color:var(--paper-dim)}
+  .ticker span b{color:var(--gold-bright);font-style:normal;font-weight:400}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  section{padding:110px 0;position:relative}
+  .sec-head{max-width:64ch;margin-bottom:54px}
+  .sec-head h2{font-size:clamp(2rem,5vw,3.6rem);margin:14px 0 12px;font-weight:300}
+  .sec-head p{color:var(--paper-dim);font-size:1.06rem}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,var(--ink-2),var(--ink))}
+  @media(max-width:780px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{padding:40px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stat:nth-child(4n){border-right:none}
+  @media(max-width:780px){.stat:nth-child(2n){border-right:none}}
+  .stat .num{font-family:'Fraunces';font-size:clamp(2.4rem,5vw,3.4rem);color:var(--gold-bright);line-height:1}
+  .stat .lbl{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim);margin-top:10px}
+
+  /* value props */
+  .props{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:900px){.props{grid-template-columns:1fr}}
+  .prop{position:relative;border:1px solid var(--line);border-radius:16px;padding:34px 28px;overflow:hidden;
+    background:linear-gradient(180deg,var(--ink-2),var(--ink));transition:transform .3s,border-color .3s}
+  .prop:hover{transform:translateY(-6px);border-color:var(--gold)}
+  .prop .mark{font-family:'Fraunces';font-size:2.4rem;color:var(--gold-deep);opacity:.6;line-height:1}
+  .prop h3{font-size:1.5rem;margin:16px 0 10px;font-weight:400}
+  .prop p{color:var(--paper-dim);font-size:.94rem}
+  .prop::before{content:"";position:absolute;top:-40%;right:-30%;width:60%;height:120%;
+    background:radial-gradient(circle,rgba(203,163,92,.1),transparent 65%);opacity:0;transition:opacity .4s}
+  .prop:hover::before{opacity:1}
+
+  /* listings */
+  .listings{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:900px){.listings{grid-template-columns:1fr}}
+  .listing{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--ink-2);transition:transform .35s,box-shadow .35s,border-color .35s}
+  .listing:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 22px 60px rgba(0,0,0,.55)}
+  .listing .img{height:240px;position:relative;overflow:hidden;background:var(--ink-3)}
+  .listing .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+  .listing:hover .img img{transform:scale(1.08)}
+  .listing .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.6))}
+  .listing .tag{position:absolute;top:14px;left:14px;z-index:4;background:rgba(16,13,9,.7);backdrop-filter:blur(4px);border:1px solid var(--line);color:var(--gold-bright);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:6px 12px;border-radius:30px}
+  .listing .price{position:absolute;bottom:14px;left:16px;z-index:4;font-family:'Fraunces';font-size:1.7rem;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+  .listing .body{padding:20px}
+  .listing .body h3{font-size:1.2rem;font-weight:600;font-family:'Manrope'}
+  .listing .body .addr{color:var(--muted);font-size:.86rem;margin-top:2px}
+  .listing .specs{display:flex;gap:18px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:.84rem;color:var(--paper-dim)}
+  .listing .specs b{color:var(--paper);font-weight:700}
+
+  /* join band */
+  .join{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--gold);
+    background:linear-gradient(120deg,var(--ink-2),var(--ink) 60%);padding:64px 50px}
+  .join::before{content:"";position:absolute;top:-60%;right:-10%;width:55%;height:220%;
+    background:radial-gradient(circle,rgba(203,163,92,.18),transparent 60%)}
+  .join .inner{position:relative;z-index:2;max-width:60ch}
+  .join h2{font-size:clamp(2rem,5vw,3.4rem);font-weight:300;margin-bottom:14px}
+  .join p{color:var(--paper-dim);font-size:1.06rem;margin-bottom:28px}
+
+  /* testimonial */
+  .quote{max-width:60ch;margin:0 auto;text-align:center}
+  .quote blockquote{font-family:'Fraunces';font-style:italic;font-weight:300;font-size:clamp(1.5rem,3.6vw,2.4rem);line-height:1.3}
+  .quote .who{margin-top:24px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+
+  footer{border-top:1px solid var(--line);padding:60px 0 50px;position:relative;z-index:2}
+  footer .grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
+  footer .col h5{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  footer .col a{display:block;color:var(--paper-dim);text-decoration:none;font-size:.9rem;margin-bottom:9px;transition:color .2s}
+  footer .col a:hover{color:var(--gold-bright)}
+  footer .bottom{margin-top:46px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:.78rem}
+</style>
+</head>
+<body>
+<div id="glow"></div>
+
+<nav id="nav">
+  <div class="wrap">
+    <div class="brand">
+      <div class="badge"><span>ONE</span></div>
+      <div class="word"><div class="top">REALTY <em>ONE</em> GROUP</div><div class="sub">Advantage</div></div>
+    </div>
+    <div class="links">
+      <a href="#listings">Listings</a>
+      <a href="#why">Why ONE</a>
+      <a href="#join">Careers</a>
+      <a href="commission-packages.html" class="cta">Agent Plans</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1757359056339-22968344cce6?fm=jpg&q=80&w=2400&auto=format&fit=crop')"></div>
+  <div class="hero-veil"></div>
+  <div class="wrap">
+    <div class="eyebrow">Realty ONE Group Advantage</div>
+    <h1>
+      <span class="l">Own the</span>
+      <span class="l"><span class="it">Advantage.</span></span>
+      <span class="l">Own the deal.</span>
+    </h1>
+    <div class="sub">
+      <p>A modern brokerage built around the agent — 100% commission models, real tools, and a brand that opens doors. Buy, sell, or build your business with people who actually move.</p>
+    </div>
+    <div class="cta-row">
+      <a href="#listings" class="btn btn-gold">View listings</a>
+      <a href="#join" class="btn btn-ghost">Become an agent</a>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll<span></span></div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="track" id="track">
+    <span>Luxury Listings <b>✦</b></span><span>100% Commission <b>✦</b></span><span>Agent-First <b>✦</b></span>
+    <span>Local Experts <b>✦</b></span><span>White-Glove Service <b>✦</b></span><span>Coaching &amp; Mentorship <b>✦</b></span>
+    <span>Luxury Listings <b>✦</b></span><span>100% Commission <b>✦</b></span><span>Agent-First <b>✦</b></span>
+    <span>Local Experts <b>✦</b></span><span>White-Glove Service <b>✦</b></span><span>Coaching &amp; Mentorship <b>✦</b></span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section style="padding-top:100px">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="num" data-to="850" data-suffix="M+" data-prefix="$">$0</div><div class="lbl">In Sales Volume</div></div>
+      <div class="stat"><div class="num" data-to="2400" data-suffix="+">0</div><div class="lbl">Families Moved</div></div>
+      <div class="stat"><div class="num" data-to="180" data-suffix="+">0</div><div class="lbl">Agents &amp; Growing</div></div>
+      <div class="stat"><div class="num" data-to="100" data-suffix="%">0</div><div class="lbl">Commission Model</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Why ONE</div>
+      <h2>Built for the way modern <span class="it">agents</span> actually work.</h2>
+      <p>No fine-print games. Just a brokerage that keeps more in your pocket and more momentum at your back.</p>
+    </div>
+    <div class="props">
+      <div class="prop reveal">
+        <div class="mark">01</div>
+        <h3>Keep what you earn</h3>
+        <p>100% commission structures with flat, predictable transaction fees — designed so the producer wins, not the house.</p>
+      </div>
+      <div class="prop reveal" style="transition-delay:.1s">
+        <div class="mark">02</div>
+        <h3>Tools &amp; tech, handled</h3>
+        <p>Onboarding ONE-on-ONE, contract management, branded marketing, signage and media — provisioned from day one.</p>
+      </div>
+      <div class="prop reveal" style="transition-delay:.2s">
+        <div class="mark">03</div>
+        <h3>Mentorship that scales</h3>
+        <p>Newly licensed? Ramp with a mentor on your first deals, then graduate to a full 100% plan when you're ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTINGS -->
+<section id="listings">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Featured</div>
+      <h2>Homes worth the <span class="it">drive-by.</span></h2>
+      <p>A sample of what's moving with ONE right now.</p>
+    </div>
+    <div class="listings" id="listingGrid"></div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section id="join">
+  <div class="wrap">
+    <div class="join reveal">
+      <div class="inner">
+        <div class="eyebrow">Careers at ONE</div>
+        <h2>Your license. Your clients. <span class="it">Your business.</span></h2>
+        <p>Pick the commission plan that fits where you are — Classic, Basic, or mentored Coaching — and keep more of every closing. See the full breakdown and run your own numbers.</p>
+        <a href="commission-packages.html" class="btn btn-gold">Explore agent plans →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section>
+  <div class="wrap">
+    <div class="quote reveal">
+      <blockquote>“They handed me the keys to run my own business and never made me beg for support. That's the whole game.”</blockquote>
+      <div class="who">— A ONE Agent, Tampa Bay</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div class="col" style="max-width:300px">
+        <div class="brand" style="margin-bottom:16px">
+          <div class="badge"><span>ONE</span></div>
+          <div class="word"><div class="top">REALTY <em>ONE</em> GROUP</div><div class="sub">Advantage</div></div>
+        </div>
+        <p style="color:var(--paper-dim);font-size:.88rem">A modern, agent-first brokerage. Buy, sell, and build with the advantage.</p>
+      </div>
+      <div class="col">
+        <h5>Explore</h5>
+        <a href="#listings">Listings</a>
+        <a href="#why">Why ONE</a>
+        <a href="commission-packages.html">Agent Plans</a>
+        <a href="#join">Careers</a>
+      </div>
+      <div class="col">
+        <h5>Connect</h5>
+        <a href="#">Contact us</a>
+        <a href="#">Schedule a call</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© <span id="yr"></span> Realty ONE Group Advantage. All rights reserved.</span>
+      <span>Equal Housing Opportunity</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  /* nav scrolled state */
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+
+  /* cursor glow */
+  const glow=document.getElementById('glow');
+  addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';});
+
+  /* listing cards with real photography (Unsplash License) */
+  const listings=[
+    {tag:'For Sale',price:'$725,000',title:'The Bayshore Modern',addr:'Davis Islands, Tampa, FL',bd:4,ba:3,sqft:'3,120',
+     img:'https://images.unsplash.com/photo-1756435292384-1bf32eff7baf?fm=jpg&q=80&w=1200&auto=format&fit=crop'},
+    {tag:'New',price:'$1.2M',title:'Glasshouse on Bayou',addr:'Land O\' Lakes, FL',bd:5,ba:4,sqft:'4,480',
+     img:'https://images.unsplash.com/photo-1759372945658-1e9f56e751bd?fm=jpg&q=80&w=1200&auto=format&fit=crop'},
+    {tag:'Pending',price:'$489,000',title:'Oakline Bungalow',addr:'Lutz, FL',bd:3,ba:2,sqft:'1,940',
+     img:'https://images.unsplash.com/photo-1675325152993-b3a5fa7f0356?fm=jpg&q=80&w=1200&auto=format&fit=crop'},
+  ];
+  document.getElementById('listingGrid').innerHTML=listings.map((l,i)=>{
+    return `<article class="listing reveal" style="transition-delay:${i*.08}s">
+      <div class="img"><img src="${l.img}" alt="${l.title}" loading="lazy">
+        <span class="tag">${l.tag}</span><span class="price">${l.price}</span></div>
+      <div class="body">
+        <h3>${l.title}</h3><div class="addr">${l.addr}</div>
+        <div class="specs"><span><b>${l.bd}</b> bd</span><span><b>${l.ba}</b> ba</span><span><b>${l.sqft}</b> sqft</span></div>
+      </div></article>`;
+  }).join('');
+
+  /* scroll reveals */
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15});
+  function bind(){document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));}
+  bind();
+
+  /* animated counters */
+  const counted=new WeakSet();
+  const cio=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting && !counted.has(e.target)){counted.add(e.target);runCount(e.target);}
+  }),{threshold:.5});
+  document.querySelectorAll('.num[data-to]').forEach(n=>cio.observe(n));
+  function runCount(el){
+    const to=+el.dataset.to, pre=el.dataset.prefix||'', suf=el.dataset.suffix||'';
+    const dur=1400, t0=performance.now();
+    function step(t){
+      const p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3);
+      el.textContent=pre+Math.round(to*e).toLocaleString('en-US')+suf;
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+</script>
+</body>
+</html>
