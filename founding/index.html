@@ -4,23 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Founding Agent Partnership — Realty ONE Group Advantage</title>
+<title>Founding Agent Plans — Realty ONE Group Advantage</title>
 <link rel="icon" href="../favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#100D09;
-    --ink-2:#181309;
-    --ink-3:#221b10;
-    --paper:#F6F1E7;
-    --paper-dim:#c8bfae;
-    --muted:#8c8475;
+    --ink:#100D09; --ink-2:#181309; --ink-3:#221b10;
+    --paper:#F6F1E7; --paper-dim:#c8bfae; --muted:#8c8475;
     --line:rgba(203,163,92,0.22);
-    --gold:#CBA35C;
-    --gold-bright:#EBCB82;
-    --gold-deep:#946f2c;
+    --gold:#CBA35C; --gold-bright:#EBCB82; --gold-deep:#946f2c;
     --maxw:1240px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -35,7 +29,6 @@
   .it{font-style:italic;color:var(--gold-bright)}
   .eyebrow{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600}
 
-  /* NAV / BRAND (matches winwithone.com) */
   nav{padding:22px 0;border-bottom:1px solid var(--line);position:relative;z-index:3}
   nav .wrap{display:flex;align-items:center;justify-content:space-between}
   .brand{display:flex;align-items:center;gap:13px}
@@ -47,54 +40,51 @@
   .brand .word .sub{font-size:.64rem;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:2px}
   .nav-tag{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:700;border:1px solid var(--line);padding:8px 16px;border-radius:50px}
 
-  /* HERO */
-  header.hero{padding:84px 0 50px;position:relative}
+  header.hero{padding:84px 0 46px;position:relative}
   .eyebrow.lead{display:inline-flex;align-items:center;gap:11px;margin-bottom:26px;opacity:0;animation:rise .9s .1s forwards}
   .eyebrow.lead::before{content:"";width:34px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
   h1{font-size:clamp(2.6rem,6.4vw,5rem);line-height:.99;max-width:15ch;opacity:0;animation:rise 1s .22s forwards}
-  .lede{margin-top:26px;max-width:56ch;font-size:clamp(1rem,1.7vw,1.16rem);color:var(--paper-dim);font-weight:400;opacity:0;animation:rise 1s .36s forwards}
+  .lede{margin-top:26px;max-width:56ch;font-size:clamp(1rem,1.7vw,1.16rem);color:var(--paper-dim);opacity:0;animation:rise 1s .36s forwards}
   .lede b{color:var(--paper);font-weight:600}
 
-  .axis{margin:42px 0 6px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;opacity:0;animation:rise 1s .5s forwards}
-  .axis-label{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700}
-  .toggle{display:inline-flex;border:1px solid var(--line);border-radius:50px;overflow:hidden;background:var(--ink-2);padding:4px}
-  .toggle button{font-family:'Manrope';font-size:.84rem;font-weight:700;letter-spacing:.02em;color:var(--paper-dim);background:transparent;border:none;padding:10px 22px;border-radius:50px;cursor:pointer;transition:.3s}
-  .toggle button.on{color:#1a1409;background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep))}
-
-  /* TIERS */
-  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:28px 0 8px}
-  @media(max-width:900px){.tiers{grid-template-columns:1fr;max-width:460px;margin:0 auto}}
-  .tier{position:relative;background:linear-gradient(180deg,var(--ink-2),var(--ink));border:1px solid var(--line);border-radius:20px;padding:34px 28px 30px;cursor:pointer;
-    transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .4s,box-shadow .4s;opacity:0;transform:translateY(24px);overflow:hidden}
-  .tier.in{opacity:1;transform:translateY(0)}
-  .tier:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 30px 70px -30px rgba(0,0,0,.8)}
-  .tier.sel{border-color:var(--gold-bright);box-shadow:0 0 0 1px var(--gold-bright),0 30px 80px -28px rgba(203,163,92,.34)}
+  .plans{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;padding:34px 0 8px;max-width:880px;margin:0 auto}
+  @media(max-width:780px){.plans{grid-template-columns:1fr;max-width:460px}}
+  .plan{position:relative;background:linear-gradient(180deg,var(--ink-2),var(--ink));border:1px solid var(--line);border-radius:20px;padding:36px 32px 32px;overflow:hidden;
+    opacity:0;transform:translateY(24px);transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .4s,box-shadow .4s}
+  .plan.in{opacity:1;transform:translateY(0)}
+  .plan:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 30px 70px -30px rgba(0,0,0,.8)}
+  .plan.flag{border-color:var(--gold-bright);box-shadow:0 0 0 1px var(--gold-bright),0 30px 80px -30px rgba(203,163,92,.3)}
+  .plan{cursor:pointer}
   .ribbon{position:absolute;top:20px;right:-36px;transform:rotate(45deg);background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));color:#1a1409;font-size:.58rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:5px 42px}
-  .t-name{font-family:'Fraunces';font-size:.8rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-bright)}
-  .t-for{font-size:.78rem;color:var(--muted);margin-top:6px;min-height:34px}
-  .t-price{margin:22px 0 4px;display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
-  .t-price .big{font-family:'Fraunces';font-size:3rem;font-weight:500;line-height:1}
-  .t-price .per{font-size:.86rem;color:var(--paper-dim)}
-  .t-sub{font-size:.84rem;color:var(--paper-dim);min-height:20px}
-  .t-keep{margin-top:18px;padding:10px 14px;border:1px dashed var(--line);border-radius:10px;font-size:.8rem;color:var(--paper-dim);background:rgba(203,163,92,.04)}
-  .t-keep b{color:var(--gold-bright);font-weight:700}
+  .p-name{font-family:'Fraunces';font-size:.84rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-bright)}
+  .p-for{font-size:.8rem;color:var(--muted);margin-top:7px;min-height:38px}
+  .p-price{margin:20px 0 4px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .p-price .big{font-family:'Fraunces';font-size:3.1rem;font-weight:500;line-height:1}
+  .p-price .per{font-size:.9rem;color:var(--paper-dim)}
+  .p-sub{font-size:.86rem;color:var(--paper-dim);min-height:22px}
+  .p-sub b{color:var(--gold-bright);font-weight:700}
+  .p-keep{margin-top:18px;padding:11px 14px;border:1px dashed var(--line);border-radius:10px;font-size:.82rem;color:var(--paper-dim);background:rgba(203,163,92,.04)}
+  .p-keep b{color:var(--gold-bright);font-weight:700}
+  .seg{margin-top:18px;display:flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--ink-3)}
+  .seg button{flex:1;font-family:'Manrope';font-size:.82rem;font-weight:800;letter-spacing:.01em;color:var(--paper-dim);background:transparent;border:none;padding:11px 8px;cursor:pointer;transition:.25s;line-height:1.2}
+  .seg button small{display:block;font-size:.6rem;color:var(--muted);font-weight:600;margin-top:3px;letter-spacing:.04em}
+  .seg button.on{background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));color:#1a1409}
+  .seg button.on small{color:#4a3813}
   .feats{list-style:none;margin:22px 0 0;display:flex;flex-direction:column;gap:11px}
   .feats li{font-size:.88rem;color:var(--paper-dim);line-height:1.45;display:flex;gap:11px;align-items:flex-start}
   .feats li::before{content:"";flex-shrink:0;width:14px;height:14px;margin-top:3px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold-bright),var(--gold-deep));box-shadow:0 0 0 3px rgba(203,163,92,.08)}
   .feats li b{color:var(--paper);font-weight:600}
-  .book-chip{margin-top:20px;display:flex;align-items:center;justify-content:space-between;padding:12px 15px;border-radius:12px;background:linear-gradient(120deg,rgba(203,163,92,.12),rgba(203,163,92,.02));border:1px solid var(--line)}
-  .book-chip .lbl{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700}
-  .book-chip .val{font-family:'Fraunces';font-size:1.5rem;color:var(--gold-bright);font-weight:600}
-  .pick{margin-top:24px;width:100%;font-family:'Manrope';font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:14px;border-radius:50px;cursor:pointer;transition:.3s;background:transparent;border:1px solid var(--line);color:var(--paper)}
-  .tier:hover .pick{border-color:var(--gold);color:var(--gold-bright)}
-  .tier.sel .pick{background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));color:#1a1409;border-color:transparent}
+  .maxline{margin-top:20px;font-size:.74rem;color:var(--muted);letter-spacing:.02em}
+  .maxline b{color:var(--paper-dim);font-family:'Fraunces';font-weight:600}
 
-  /* CALC */
-  .calc{margin:58px 0 28px;background:linear-gradient(180deg,var(--ink-2),var(--ink));border:1px solid var(--line);border-radius:22px;padding:40px 38px;position:relative;overflow:hidden}
+  .calc{margin:56px 0 28px;background:linear-gradient(180deg,var(--ink-2),var(--ink));border:1px solid var(--line);border-radius:22px;padding:40px 38px;position:relative;overflow:hidden}
   .calc::after{content:"";position:absolute;top:-40%;right:-8%;width:380px;height:380px;background:radial-gradient(circle,rgba(203,163,92,.1),transparent 65%);pointer-events:none}
   .calc h2{font-size:clamp(1.6rem,3vw,2.1rem)}
-  .calc p.sub{color:var(--paper-dim);font-size:.92rem;margin-top:8px;max-width:54ch}
-  .slider-top{display:flex;justify-content:space-between;align-items:flex-end;margin-top:32px}
+  .calc p.sub{color:var(--paper-dim);font-size:.92rem;margin-top:8px;max-width:56ch}
+  .pick-row{margin-top:24px;display:flex;gap:10px;flex-wrap:wrap}
+  .pick-row button{font-family:'Manrope';font-size:.78rem;font-weight:700;letter-spacing:.02em;color:var(--paper-dim);background:var(--ink-3);border:1px solid var(--line);padding:11px 18px;border-radius:50px;cursor:pointer;transition:.25s}
+  .pick-row button.on{background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));color:#1a1409;border-color:transparent}
+  .slider-top{display:flex;justify-content:space-between;align-items:flex-end;margin-top:26px}
   .slider-top .k{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700}
   .slider-top .v b{font-family:'Fraunces';font-size:2.1rem;color:var(--gold-bright);font-weight:600}
   .slider-top .v span{font-size:.84rem;color:var(--paper-dim)}
@@ -106,14 +96,14 @@
   .gci-input .field{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;background:var(--ink);padding:0 14px}
   .gci-input .field span{color:var(--muted)}
   .gci-input input{background:transparent;border:none;outline:none;color:var(--gold-bright);font-family:'Fraunces';font-size:1.1rem;font-weight:600;padding:10px 4px;width:96px}
-  .verdict{margin-top:32px;display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+  .verdict{margin-top:30px;display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
   @media(max-width:760px){.verdict{grid-template-columns:1fr}}
-  .rec{background:linear-gradient(150deg,rgba(203,163,92,.13),rgba(203,163,92,.02));border:1px solid var(--gold);border-radius:16px;padding:26px}
+  .rec{background:linear-gradient(150deg,rgba(203,163,92,.13),rgba(203,163,92,.02));border:1px solid var(--gold);border-radius:16px;padding:24px}
   .rec .k{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700}
-  .rec .tier-name{font-family:'Fraunces';font-size:2.4rem;font-weight:600;color:var(--gold-bright);margin:6px 0 2px;line-height:1}
+  .rec .tier-name{font-family:'Fraunces';font-size:1.55rem;font-weight:600;color:var(--gold-bright);margin:8px 0 2px;line-height:1.1}
   .rec .why{font-size:.86rem;color:var(--paper-dim);line-height:1.5;margin-top:10px}
-  .breakdown{background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:24px 26px}
-  .breakdown .k{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:14px}
+  .breakdown{background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:22px 26px}
+  .breakdown .k{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:12px}
   .brow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:.9rem}
   .brow:last-child{border-bottom:none}
   .brow .lbl{color:var(--paper-dim)}
@@ -121,8 +111,7 @@
   .brow.hl .lbl{color:var(--paper)}
   .brow.hl .num{color:var(--gold-bright);font-size:1.3rem}
 
-  /* BOOK */
-  .book{margin:62px 0 28px;text-align:center;padding:54px 30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .book{margin:60px 0 28px;text-align:center;padding:52px 30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .book h2{font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.04;max-width:19ch;margin:14px auto 0}
   .book p{max-width:60ch;margin:22px auto 0;color:var(--paper-dim);font-size:.98rem;line-height:1.7}
   .book p b{color:var(--paper);font-weight:600}
@@ -133,10 +122,9 @@
   .step h4{font-size:1.18rem;font-weight:600;margin:8px 0}
   .step p{margin:0;font-size:.84rem;color:var(--paper-dim);line-height:1.55;text-align:left}
 
-  /* FOOT CTA */
-  .foot{padding:58px 0 78px;text-align:center}
+  .foot{padding:56px 0 78px;text-align:center}
   .foot h3{font-size:clamp(1.7rem,3.6vw,2.7rem)}
-  .foot .summary{margin:18px auto 28px;max-width:48ch;color:var(--paper-dim);font-size:.95rem}
+  .foot .summary{margin:18px auto 28px;max-width:50ch;color:var(--paper-dim);font-size:.95rem}
   .foot .summary b{color:var(--gold-bright);font-family:'Fraunces';font-weight:600}
   .cta{display:inline-flex;align-items:center;gap:12px;font-family:'Manrope';font-size:.86rem;font-weight:800;letter-spacing:.06em;color:#1a1409;padding:18px 40px;border-radius:50px;cursor:pointer;border:none;background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));transition:.3s;box-shadow:0 14px 40px -12px rgba(203,163,92,.5);text-decoration:none}
   .cta:hover{transform:translateY(-3px);box-shadow:0 20px 50px -12px rgba(203,163,92,.6)}
@@ -159,23 +147,18 @@
 <div class="wrap">
   <header class="hero">
     <span class="eyebrow lead">A private invitation</span>
-    <h1>Keep what you earn. Build what you <span class="it">own.</span></h1>
-    <p class="lede">Most brokerages sell you a discount. We're building something different — keep your commission, let an <b>AI operator run your pipeline</b>, and every year you produce, build equity in a <b>book of business you can one day sell.</b> Pick the structure that fits how you work.</p>
-
-    <div class="axis">
-      <span class="axis-label">How you pay the group</span>
-      <div class="toggle" id="toggle">
-        <button class="on" data-mode="cap">Cap &amp; keep 100%</button>
-        <button data-mode="flat">Flat fee</button>
-      </div>
-    </div>
+    <h1>Two plans. Keep what you <span class="it">earn.</span></h1>
+    <p class="lede">A modern, agent-first brokerage with two simple ways to join — a low-monthly <b>Starter</b>, or our <b>91/9 Producer split</b> with a cap, so once you've paid in you keep <b>100%</b> for the rest of the year. Pick the one that fits how you work.</p>
   </header>
 
-  <section class="tiers" id="tiers"></section>
+  <section class="plans" id="plans"></section>
 
   <section class="calc">
-    <h2>Which tier am <span class="it">I?</span></h2>
-    <p class="sub">Drag your real numbers. The right tier is just the one that costs you least and builds your Book fastest — no negotiation.</p>
+    <h2>Which plan am <span class="it">I?</span></h2>
+    <p class="sub">Choose a plan, drag your real numbers, and see exactly what you'd pay and keep this year. We'll also point out the lowest-cost option for your volume — no negotiation, no games.</p>
+
+    <div class="pick-row" id="pickRow"></div>
+
     <div class="slider-top">
       <span class="k">Deals per year</span>
       <span class="v"><b id="dealsOut">12</b> <span>transactions</span></span>
@@ -185,113 +168,140 @@
       <label>Avg GCI / deal</label>
       <div class="field"><span>$</span><input type="number" id="gci" value="9000" min="1000" step="500"></div>
     </div>
+
     <div class="verdict">
       <div class="rec">
-        <div class="k">Recommended for you</div>
-        <div class="tier-name" id="recName">Core</div>
+        <div class="k">Lowest cost for your volume</div>
+        <div class="tier-name" id="recName">—</div>
         <div class="why" id="recWhy"></div>
       </div>
       <div class="breakdown">
-        <div class="k">Your year at this tier</div>
+        <div class="k">Selected plan · your year</div>
         <div class="brow"><span class="lbl">Gross commission income</span><span class="num" id="bGci">—</span></div>
         <div class="brow"><span class="lbl">Paid to the group</span><span class="num" id="bPaid">—</span></div>
         <div class="brow hl"><span class="lbl">You keep</span><span class="num" id="bKeep">—</span></div>
-        <div class="brow"><span class="lbl">Added to your Book</span><span class="num" id="bBook">—</span></div>
       </div>
     </div>
   </section>
 
   <section class="book">
     <span class="eyebrow">The one thing nobody else gives you</span>
-    <h2>An asset you can <span class="it">sell</span> when you're done.</h2>
-    <p>Financial advisors, insurance agents, accountants — they can all sell their book of business at retirement. Real estate never could. <b>The Book changes that.</b> Each year you produce, a percentage of your GCI accrues into your Book, the group matches a share, it vests over five years — and when you're ready to step back, you cash it out or sell your client base to a younger agent in your pod, financed through us.</p>
+    <h2>Build an asset you can <span class="it">sell</span> when you're done.</h2>
+    <p>Financial advisors, insurance agents, accountants — they can all sell their book of business at retirement. Real estate never could. <b>The Book changes that.</b> Every agent here builds equity as they produce; it vests over time, and when you're ready to step back you cash it out or sell your client base to a younger agent in your pod, financed through us. You leave with something. Finally.</p>
     <div class="book-steps">
-      <div class="step"><div class="n">01 / ACCRUE</div><h4>You produce, it grows</h4><p>A set percentage of every dollar of GCI you run through the group lands in your Book — 2% at Launch, 4% at Core, 6% at Elite — and we match a portion on top.</p></div>
-      <div class="step"><div class="n">02 / VEST</div><h4>It locks in over 5 years</h4><p>Your Book vests 20% a year. Stay and produce, and it becomes fully yours — a real, growing number you watch climb in the app.</p></div>
-      <div class="step"><div class="n">03 / EXIT</div><h4>Cash out — or sell it</h4><p>At retirement, take the published buy-back value, or sell your database and referral stream to a pod-mate, financed by the group. You leave with something. Finally.</p></div>
+      <div class="step"><div class="n">01 / PRODUCE</div><h4>Your business compounds</h4><p>The more you close, the more your Book and your relationships build — backed by an AI operator that works your database for you.</p></div>
+      <div class="step"><div class="n">02 / VEST</div><h4>It becomes yours</h4><p>Your Book vests over time. Stay and produce, and it turns into a real, growing number you watch climb in the app.</p></div>
+      <div class="step"><div class="n">03 / EXIT</div><h4>Cash out — or sell it</h4><p>At retirement, take the published value, or sell your database and referral stream to a pod-mate, financed by the group.</p></div>
     </div>
   </section>
 
   <section class="foot">
-    <h3>You picked <span class="it" id="footTier">Core</span>. Smart choice.</h3>
-    <p class="summary">At this tier you'd keep <b id="footKeep">$96,000</b> this year and add <b id="footBook">$4,320</b> to your Book.</p>
+    <h3>You picked <span class="it" id="footTier">Producer</span>.</h3>
+    <p class="summary">At this plan and volume you'd keep <b id="footKeep">—</b> this year.</p>
     <a class="cta" href="../join.html">Apply as a founding agent ⟶</a>
-    <p class="disclaimer">Private founding-agent preview. Figures are illustrative defaults for modeling only and assume Florida-market economics; actual terms vary and are set per market. The Book equity, company match, buy-back, and book-financing features are concepts pending legal structuring and are not an offer of a security, investment, or guaranteed return. Final packages and any equity or finance components are subject to review by securities and real-estate-licensing counsel and applicable RESPA rules before being offered.</p>
+    <p class="disclaimer">Private founding-agent preview. Figures are illustrative and assume Florida-market economics; actual terms vary. "Keep" nets monthly and per-deal fees against gross commission for comparison only and is not a take-home guarantee. The Book equity, vesting, buy-back, and book-financing features are concepts pending legal structuring and are not an offer of a security, investment, or guaranteed return. Final plans and any equity or finance components are subject to review by securities and real-estate-licensing counsel and applicable RESPA rules before being offered.</p>
   </section>
 </div>
 
 <script>
-  const TIERS = {
-    launch:{name:"Launch",forWho:"New & part-time agents · under ~6 deals/yr",ribbon:null,
-      cap:{big:"$149",per:"/mo",sub:"+ $500 per transaction · no cap",keep:"You keep <b>100%</b> of commission minus fees"},
-      flat:{big:"$149",per:"/mo",sub:"+ $500 per transaction · no cap",keep:"You keep <b>100%</b> of commission minus fees"},
-      bookPct:2,feats:["<b>AI operator</b> in assist mode — drafts follow-ups & preps appointments","Pod membership — a team of 8–12, not a call center","Direct mentorship from your producing pod lead","Full transaction & compliance support"]},
-    core:{name:"Core",forWho:"Producing agents · ~6–20 deals/yr",ribbon:"Most popular",
-      cap:{big:"85/15",per:"split",sub:"to a $12,000 cap, then keep 100% · $250/tx after",keep:"After cap you keep <b>100%</b> — cap dollars buy into your Book"},
-      flat:{big:"$799",per:"/mo",sub:"flat · no split · no cap",keep:"You keep <b>100%</b> of every commission dollar"},
-      bookPct:4,feats:["<b>Full AI operator</b> — works your database & surfaces who's about to transact","Pod membership + shared ops resource","Cap dollars convert to <b>Book-equity credits</b>","Ancillary access — mortgage & title attach on your deals"]},
-    elite:{name:"Elite",forWho:"Top producers & teams · 20+ deals/yr",ribbon:"Top producers",
-      cap:{big:"$1,000",per:"/mo",sub:"flat · no split · no cap",keep:"You keep <b>every dollar</b> of commission"},
-      flat:{big:"$1,000",per:"/mo",sub:"flat · no split · no cap",keep:"You keep <b>every dollar</b> of commission"},
-      bookPct:6,feats:["<b>Priority AI compute</b> — your operator runs first, fastest","Dedicated pod-ops resource & team templates","Highest <b>Book-equity match</b> in the group","Full ancillary + book-financing access at exit"]}
+  const VAR = {
+    low:  { label:"$50/mo · $16k cap",  monthly:50,  cap:16000 },
+    fast: { label:"$150/mo · $12k cap", monthly:150, cap:12000 }
   };
-  let mode="cap", selected="core";
-  const tiersEl=document.getElementById('tiers');
-  const money=n=>"$"+Math.round(n).toLocaleString();
-  function renderTiers(){
-    tiersEl.innerHTML="";
-    Object.entries(TIERS).forEach(([key,t],i)=>{
-      const p=t[mode], card=document.createElement('div');
-      card.className="tier"+(selected===key?" sel":"");
-      card.style.animationDelay=(i*0.12)+"s";
-      card.innerHTML=`${t.ribbon?`<div class="ribbon">${t.ribbon}</div>`:""}
-        <div class="t-name">${t.name}</div><div class="t-for">${t.forWho}</div>
-        <div class="t-price"><span class="big">${p.big}</span><span class="per">${p.per}</span></div>
-        <div class="t-sub">${p.sub}</div><div class="t-keep">${p.keep}</div>
-        <ul class="feats">${t.feats.map(f=>`<li>${f}</li>`).join("")}</ul>
-        <div class="book-chip"><span class="lbl">Book accrual</span><span class="val">${t.bookPct}%<span style="font-size:.78rem;color:var(--muted)"> of GCI</span></span></div>
-        <button class="pick">${selected===key?"✓ Selected":"Choose "+t.name}</button>`;
-      card.onclick=()=>{selected=key;renderTiers();calc();};
-      tiersEl.appendChild(card);
-      requestAnimationFrame(()=>requestAnimationFrame(()=>card.classList.add('in')));
+  let producerVar = "low";
+  let selected = "producer";
+  const SPLIT = 0.09;
+  const money = n => "$"+Math.round(n).toLocaleString();
+
+  const costStarter  = deals => 50*12 + 250*deals;
+  const costProducer = (deals,gci,v) => VAR[v].monthly*12 + Math.min(SPLIT*deals*gci, VAR[v].cap);
+
+  function renderPlans(){
+    const el = document.getElementById('plans');
+    const conf = VAR[producerVar];
+    el.innerHTML = `
+      <div class="plan ${selected==='starter'?'flag':''}" data-plan="starter">
+        <div class="p-name">Starter</div>
+        <div class="p-for">New &amp; part-time agents getting going</div>
+        <div class="p-price"><span class="big">$50</span><span class="per">/mo</span></div>
+        <div class="p-sub">+ $250 per transaction · no split, no cap</div>
+        <div class="p-keep">You keep <b>100%</b> of every commission, minus the flat per-deal fee</div>
+        <ul class="feats">
+          <li><b>AI operator</b> in assist mode — drafts follow-ups &amp; preps appointments</li>
+          <li>Pod membership &amp; mentorship from a producing lead</li>
+          <li>Full transaction &amp; compliance support</li>
+          <li>You build a <b>Book</b> from day one</li>
+        </ul>
+        <div class="maxline">All-year cost: <b>$600 + $250 / deal</b></div>
+      </div>
+
+      <div class="plan ${selected==='producer'?'flag':''}" data-plan="producer">
+        <div class="ribbon">Most popular</div>
+        <div class="p-name">Producer</div>
+        <div class="p-for">Producing agents who want to cap &amp; keep 100%</div>
+        <div class="p-price"><span class="big">91/9</span><span class="per">split</span></div>
+        <div class="p-sub">to a <b>${money(conf.cap)}</b> cap, then keep <b>100%</b> the rest of the year</div>
+        <div class="seg" id="seg">
+          <button data-v="low" class="${producerVar==='low'?'on':''}">$50<small>/MO · $16K CAP</small></button>
+          <button data-v="fast" class="${producerVar==='fast'?'on':''}">$150<small>/MO · $12K CAP</small></button>
+        </div>
+        <ul class="feats">
+          <li><b>91% to you, 9% to the group</b> on each deal — until you hit your cap</li>
+          <li>After cap, <b>keep 100%</b> of every commission</li>
+          <li><b>Full AI operator</b> — works your database &amp; surfaces who's about to transact</li>
+          <li>Pod + ancillary access (mortgage &amp; title) &amp; a faster-growing <b>Book</b></li>
+        </ul>
+        <div class="maxline">All-year cost caps at <b>${money(conf.monthly*12 + conf.cap)}</b>, then free</div>
+      </div>`;
+
+    el.querySelectorAll('.plan').forEach(card=>{
+      card.onclick = e=>{
+        if(e.target.closest('.seg')) return;
+        selected = card.dataset.plan; syncPicks(); renderPlans(); calc();
+      };
     });
+    const seg = document.getElementById('seg');
+    if(seg) seg.querySelectorAll('button').forEach(b=>{
+      b.onclick = ev=>{ ev.stopPropagation(); producerVar=b.dataset.v; selected='producer'; syncPicks(); renderPlans(); calc(); };
+    });
+    requestAnimationFrame(()=>requestAnimationFrame(()=>el.querySelectorAll('.plan').forEach(c=>c.classList.add('in'))));
   }
-  document.getElementById('toggle').addEventListener('click',e=>{
-    const b=e.target.closest('button'); if(!b)return; mode=b.dataset.mode;
-    document.querySelectorAll('#toggle button').forEach(x=>x.classList.toggle('on',x===b)); renderTiers();
-  });
+
+  function syncPicks(){
+    const pr = document.getElementById('pickRow');
+    pr.innerHTML = [['starter','Starter'],['producer','Producer']]
+      .map(([k,l])=>`<button data-k="${k}" class="${selected===k?'on':''}">${l}</button>`).join("");
+    pr.querySelectorAll('button').forEach(b=> b.onclick=()=>{ selected=b.dataset.k; syncPicks(); renderPlans(); calc(); });
+  }
+
   const dealsEl=document.getElementById('deals'), gciEl=document.getElementById('gci');
-  function costAt(k,deals,gci){
-    if(k==="launch")return 149*12+500*deals;
-    if(k==="elite")return 1000*12;
-    let paid=0,capped=false;
-    for(let i=1;i<=deals;i++){
-      if(!capped){const s=gci*0.15; if(paid+s>=12000){paid=12000;capped=true;paid+=250;} else paid+=s;}
-      else paid+=250;
-    }
-    return Math.min(paid,12000+250*deals);
-  }
-  const rec=d=> d<6?"launch":(d<=20?"core":"elite");
   function calc(){
-    const deals=+dealsEl.value, gci=+gciEl.value||0;
+    const deals=+dealsEl.value, gci=+gciEl.value||0, total=deals*gci;
     document.getElementById('dealsOut').textContent=deals;
     dealsEl.style.setProperty('--pct',((deals-1)/39*100)+"%");
-    const r=rec(deals), t=TIERS[selected], total=deals*gci, paid=costAt(selected,deals,gci), keep=total-paid, book=total*(t.bookPct/100);
-    document.getElementById('recName').textContent=TIERS[r].name;
-    document.getElementById('recWhy').textContent={
-      launch:"At your volume, the low monthly + per-deal fee beats paying a split. Keep it simple while you build — and you're accruing Book from day one.",
-      core:"Your sweet spot. You'll hit the $12k cap and keep 100% after — and every cap dollar converts into Book equity instead of vanishing.",
-      elite:"At 20+ deals a flat $1,000/mo crushes any split, you keep every dollar, and you earn the highest Book match in the group."}[r];
+
+    const paid = selected==='starter' ? costStarter(deals) : costProducer(deals,gci,producerVar);
+    const keep = total - paid;
     document.getElementById('bGci').textContent=money(total);
     document.getElementById('bPaid').textContent=money(paid);
     document.getElementById('bKeep').textContent=money(keep);
-    document.getElementById('bBook').textContent="+"+money(book);
-    document.getElementById('footTier').textContent=t.name;
+    document.getElementById('footTier').textContent = selected==='starter' ? 'Starter' : ('Producer · '+VAR[producerVar].label);
     document.getElementById('footKeep').textContent=money(keep);
-    document.getElementById('footBook').textContent=money(book);
+
+    const all=[
+      {name:'Starter', cost:costStarter(deals),
+        why:'A flat per-deal fee with no split is the cheapest way to keep 100% at your volume.'},
+      {name:'Producer · $50/mo · $16k cap', cost:costProducer(deals,gci,'low'),
+        why:'Lower monthly; you ride the 9% split until $16k. Best if you won\u2019t fully cap out.'},
+      {name:'Producer · $150/mo · $12k cap', cost:costProducer(deals,gci,'fast'),
+        why:'Higher monthly but you cap $4k sooner — best once your volume reliably caps you out.'}
+    ].sort((a,b)=>a.cost-b.cost);
+    document.getElementById('recName').textContent=all[0].name+" — "+money(all[0].cost)+"/yr";
+    document.getElementById('recWhy').textContent=all[0].why;
   }
   dealsEl.addEventListener('input',calc); gciEl.addEventListener('input',calc);
-  renderTiers(); calc();
+
+  syncPicks(); renderPlans(); calc();
 </script>
 </body>
 </html>
